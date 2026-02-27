@@ -1,45 +1,168 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg: #0A0F0A;
+  --bg-card: rgba(16, 24, 16, 0.6);
+  --border: rgba(74, 222, 128, 0.08);
+  --border-active: rgba(74, 222, 128, 0.4);
+  --border-amber: rgba(245, 158, 11, 0.4);
+  --text: #E2E8F0;
+  --text-dim: #94A3B8;
+  --text-muted: #475569;
+  --green: #4ADE80;
+  --green-dim: #22C55E;
+  --amber: #F59E0B;
+  --teal: #2DD4BF;
+  --glow-green: 0 0 20px rgba(74, 222, 128, 0.15), 0 0 60px rgba(74, 222, 128, 0.05);
+  --glow-green-bright: 0 0 20px rgba(74, 222, 128, 0.3), 0 0 60px rgba(74, 222, 128, 0.1);
+  --glow-amber: 0 0 20px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Glassmorphism */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
+.glass-bright {
+  background: rgba(16, 24, 16, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Card fade in with slide */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-spin {
-  animation: spin 1s linear infinite;
+.animate-card-in {
+  animation: cardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+/* Grid tiles animate in from below */
+@keyframes tileIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
+.animate-tile-in {
+  animation: tileIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Pulse glow for generate button */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.2), 0 0 60px rgba(74, 222, 128, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.35), 0 0 80px rgba(74, 222, 128, 0.1);
+  }
+}
+
+.glow-pulse {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Sprouting seeds loading */
+@keyframes sprout1 {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+@keyframes sprout2 {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+@keyframes sprout3 {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+.sprout-1 { animation: sprout1 1.4s ease-in-out infinite; animation-delay: 0s; transform-origin: bottom; }
+.sprout-2 { animation: sprout2 1.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; }
+.sprout-3 { animation: sprout3 1.4s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; }
+
+/* Toast */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-8px) scale(0.95); }
+}
+
+.toast-in {
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.toast-out {
+  animation: toastOut 0.25s ease-in forwards;
+}
+
+/* Toggle slide */
+@keyframes toggleSlide {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+/* Subtle background gradient blobs */
+.bg-blob-1 {
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-2 {
+  position: fixed;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-3 {
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(74, 222, 128, 0.2);
+  color: #E2E8F0;
 }
