@@ -26,11 +26,11 @@ LAYER 3 - DELIVERY (how the video is filmed) — FOLLOW EXACT OUTPUT FORMATS:
 Face to Camera: You look at your phone and just talk. That's it. You say what you gotta say, short and punchy, and you're done.
 Output: Full spoken script, word for word what to say. Conversational, broken into short paragraphs matching natural speech. No stage directions, no visual notes — just the words to say.
 
-Montage: You don't talk at all. It's just cool clips of you doing your thing — cooking, walking, driving, living life — with one sentence on the screen and music playing. It's just a vibe.
-Output: "**On-Screen Text:**" (one sentence hook/message), "**Suggested Visuals:**" describing the clips to film (everyday life moments that fit the vibe), "**Suggested Audio:**" note (trending sound, ambient, lo-fi, etc). No spoken script.
+Montage: B-roll clips of you — the creator — doing your thing. Cooking, walking, driving, living life. No voiceover. No talking at all. The message comes through one sentence of text on screen and music. It's just a vibe. Both Montage and Day in the Life use B-roll of the creator, but Montage has NO voice — just visuals, text, and audio.
+Output: "**On-Screen Text:**" (one sentence hook/message), "**Suggested Clips:**" describing specific B-roll clips of the creator to film (everyday life moments that fit the vibe), "**Suggested Audio:**" note (trending sound, ambient, lo-fi, etc). NO spoken script. NO voiceover.
 
-Day in the Life: You're doing your normal stuff and narrating over clips. You aren't talking in the videos — you have clips together and you are talking over them. Making breakfast, going to the store, eating out — and you're talking over it, like you're bringing someone along with you.
-Output: Full narration script (voiceover style, casual, like you're bringing a friend along) PLUS a "**Suggested Visuals:**" section describing the daily life clips to film underneath the narration.
+Day in the Life: B-roll clips of you — the creator — doing your normal stuff, but with a voiceover narrating what the viewer is seeing. You aren't talking on camera — you have clips edited together and you're talking over them, like you're bringing someone along with you. "Yo check this out, this is what I'm eating right now..." Both Montage and Day in the Life use B-roll of the creator, but Day in the Life HAS a voiceover narrating the clips.
+Output: Full voiceover narration script (casual, like you're walking a friend through your day and describing what they're seeing) PLUS a "**Suggested Clips:**" section describing specific B-roll clips of the creator to film underneath the narration. The voiceover should reference and narrate what the viewer is watching.
 
 Reaction: You put something on the screen behind you or stitch something — like a bad take someone posted — and you talk about why it's wrong. Like you're telling your friend "nah, that ain't it, here's why."
 Output: "**Reacting To:**" description of what content to react to (article, tweet, video, bad take), then full spoken reaction script.

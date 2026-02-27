@@ -20,8 +20,8 @@ const PILLARS: { value: Pillar; label: string }[] = [
 
 const DELIVERIES: { value: Delivery; label: string; desc: string }[] = [
   { value: "Face to Camera", label: "Face to Camera", desc: "Look at your phone and just talk. Short and punchy." },
-  { value: "Montage", label: "Montage", desc: "No talking. Cool clips, one sentence on screen, music playing." },
-  { value: "Day in the Life", label: "Day in the Life", desc: "Everyday clips with you narrating over them casually." },
+  { value: "Montage", label: "Montage", desc: "B-roll clips of you living life. No voiceover — just text on screen and music." },
+  { value: "Day in the Life", label: "Day in the Life", desc: "B-roll clips of you living life with a voiceover narrating what the viewer sees." },
   { value: "Reaction", label: "Reaction", desc: "React to something on screen. Stitch it or green screen it." },
 ];
 
