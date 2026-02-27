@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import type { Driver, Pillar, Delivery } from "@/lib/types";
 
 const DRIVERS: { value: Driver; label: string; desc: string }[] = [
@@ -185,33 +185,10 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [scripts, setScripts] = useState<string[]>([]);
   const [error, setError] = useState("");
-  const [apiKey, setApiKey] = useState("");
-  const [showSettings, setShowSettings] = useState(false);
-  const [keyInput, setKeyInput] = useState("");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("anthropic_api_key");
-    if (stored) {
-      setApiKey(stored);
-      setKeyInput(stored);
-    }
-  }, []);
-
-  const saveKey = () => {
-    const trimmed = keyInput.trim();
-    localStorage.setItem("anthropic_api_key", trimmed);
-    setApiKey(trimmed);
-    setShowSettings(false);
-  };
 
   const generate = async () => {
     if (!driver) {
       setError("Pick a driver first.");
-      return;
-    }
-    if (!apiKey) {
-      setError("Add your Anthropic API key in settings.");
-      setShowSettings(true);
       return;
     }
 
@@ -228,7 +205,6 @@ export default function Home() {
           pillar: pillarAuto ? "Auto" : pillar,
           delivery: deliveryAuto ? "Auto" : delivery,
           count,
-          apiKey,
         }),
       });
 
@@ -249,54 +225,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
-      {/* Settings Modal */}
-      {showSettings && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-          <div className="animate-fade-in w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-            <h2 className="mb-1 text-lg font-semibold text-white">
-              API Key
-            </h2>
-            <p className="mb-4 text-sm text-zinc-400">
-              Your Anthropic API key is stored locally in your browser. It never
-              leaves your device except to call the Anthropic API.
-            </p>
-            <input
-              type="password"
-              value={keyInput}
-              onChange={(e) => setKeyInput(e.target.value)}
-              placeholder="sk-ant-..."
-              className="mb-4 w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none focus:border-zinc-500"
-            />
-            <div className="flex gap-3">
-              <button
-                onClick={() => setShowSettings(false)}
-                className="flex-1 rounded-lg border border-zinc-700 py-2.5 text-sm text-zinc-400 transition-colors hover:text-white"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={saveKey}
-                className="flex-1 rounded-lg bg-white py-2.5 text-sm font-medium text-black transition-opacity hover:opacity-90"
-              >
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Header */}
       <header className="border-b border-zinc-800/50">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <h1 className="text-lg font-semibold tracking-tight text-white">
             Script Generator
           </h1>
-          <button
-            onClick={() => setShowSettings(true)}
-            className="rounded-lg border border-zinc-800 px-3 py-1.5 text-xs text-zinc-400 transition-colors hover:border-zinc-600 hover:text-white"
-          >
-            {apiKey ? "API Key ✓" : "Set API Key"}
-          </button>
         </div>
       </header>
 
