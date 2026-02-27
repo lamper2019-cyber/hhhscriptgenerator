@@ -18,12 +18,11 @@ const PILLARS: { value: Pillar; label: string }[] = [
   { value: "Music", label: "Music" },
 ];
 
-const DELIVERIES: { value: Delivery; label: string }[] = [
-  { value: "Face to Camera", label: "Face to Camera" },
-  { value: "Voiceover", label: "Voiceover" },
-  { value: "B-Roll", label: "B-Roll" },
-  { value: "Reaction", label: "Reaction" },
-  { value: "Trending", label: "Trending" },
+const DELIVERIES: { value: Delivery; label: string; desc: string }[] = [
+  { value: "Face to Camera", label: "Face to Camera", desc: "Look at your phone and just talk. Short and punchy." },
+  { value: "Montage", label: "Montage", desc: "No talking. Cool clips, one sentence on screen, music playing." },
+  { value: "Day in the Life", label: "Day in the Life", desc: "Everyday clips with you narrating over them casually." },
+  { value: "Reaction", label: "Reaction", desc: "React to something on screen. Stitch it or green screen it." },
 ];
 
 function parseScriptContent(raw: string): string[] {
@@ -114,12 +113,13 @@ function ToggleSelector<T extends string>({
   onToggleAuto,
 }: {
   label: string;
-  options: { value: T; label: string }[];
+  options: { value: T; label: string; desc?: string }[];
   value: T | null;
   onChange: (v: T) => void;
   isAuto: boolean;
   onToggleAuto: () => void;
 }) {
+  const hasDescs = options.some((o) => o.desc);
   return (
     <div>
       <div className="mb-3 flex items-center justify-between">
@@ -152,18 +152,27 @@ function ToggleSelector<T extends string>({
         </button>
       </div>
       {!isAuto && (
-        <div className="animate-fade-in grid grid-cols-2 gap-2 sm:grid-cols-3">
+        <div className={`animate-fade-in grid grid-cols-2 gap-2 ${!hasDescs ? "sm:grid-cols-3" : ""}`}>
           {options.map((opt) => (
             <button
               key={opt.value}
               onClick={() => onChange(opt.value)}
-              className={`rounded-lg border px-3 py-2.5 text-sm transition-all ${
+              className={`rounded-lg border text-left transition-all ${
+                hasDescs ? "p-3" : "px-3 py-2.5"
+              } ${
                 value === opt.value
-                  ? "border-white bg-white/10 text-white"
-                  : "border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200"
+                  ? "border-white bg-white/10"
+                  : "border-zinc-800 hover:border-zinc-600"
               }`}
             >
-              {opt.label}
+              <div className={`text-sm font-medium ${
+                value === opt.value ? "text-white" : "text-zinc-300"
+              }`}>
+                {opt.label}
+              </div>
+              {opt.desc && (
+                <div className="mt-0.5 text-xs text-zinc-500">{opt.desc}</div>
+              )}
             </button>
           ))}
         </div>

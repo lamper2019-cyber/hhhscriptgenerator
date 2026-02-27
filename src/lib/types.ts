@@ -9,10 +9,9 @@ export type Pillar =
 
 export type Delivery =
   | "Face to Camera"
-  | "Voiceover"
-  | "B-Roll"
-  | "Reaction"
-  | "Trending";
+  | "Montage"
+  | "Day in the Life"
+  | "Reaction";
 
 export type Value =
   | "Educational"

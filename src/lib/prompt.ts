@@ -23,20 +23,17 @@ LAYER 2 - PILLAR (topic):
 
 LAYER 3 - DELIVERY (how the video is filmed) — FOLLOW EXACT OUTPUT FORMATS:
 
-Face to Camera: Creator on screen talking directly into camera.
-Output: Full spoken script, word for word what to say. Conversational, broken into short paragraphs matching natural speech.
+Face to Camera: You look at your phone and just talk. That's it. You say what you gotta say, short and punchy, and you're done.
+Output: Full spoken script, word for word what to say. Conversational, broken into short paragraphs matching natural speech. No stage directions, no visual notes — just the words to say.
 
-Voiceover: Creator's voice recorded separately over other footage. Not on screen.
-Output: Full narration script PLUS a "**Suggested Visuals:**" section describing footage to film or use as B-roll.
+Montage: You don't talk at all. It's just cool clips of you doing your thing — cooking, walking, driving, living life — with one sentence on the screen and music playing. It's just a vibe.
+Output: "**On-Screen Text:**" (one sentence hook/message), "**Suggested Visuals:**" describing the clips to film (everyday life moments that fit the vibe), "**Suggested Audio:**" note (trending sound, ambient, lo-fi, etc). No spoken script.
 
-B-Roll: No one on screen. No voiceover. Short clips edited together. Message through visuals and text on screen.
-Output: "**On-Screen Text:**" (one sentence hook/message), "**Suggested Visuals:**" describing clips to film, "**Suggested Audio:**" note (trending sound, ambient, lo-fi, etc).
+Day in the Life: You're doing your normal stuff and narrating over clips. You aren't talking in the videos — you have clips together and you are talking over them. Making breakfast, going to the store, eating out — and you're talking over it, like you're bringing someone along with you.
+Output: Full narration script (voiceover style, casual, like you're bringing a friend along) PLUS a "**Suggested Visuals:**" section describing the daily life clips to film underneath the narration.
 
-Reaction: Creator on screen responding to another piece of content (green screen, stitch, duet).
-Output: "**Reacting To:**" description of what to react to, then full spoken reaction script.
-
-Trending: Creator adapts a current trend (audio, format, meme, cultural moment) to fit their niche.
-Output: "**Trend:**" description, "**On-Screen Text:**", "**Suggested Visuals:**". Script only if trend requires speaking.
+Reaction: You put something on the screen behind you or stitch something — like a bad take someone posted — and you talk about why it's wrong. Like you're telling your friend "nah, that ain't it, here's why."
+Output: "**Reacting To:**" description of what content to react to (article, tweet, video, bad take), then full spoken reaction script.
 
 LAYER 4 - VALUE (what viewer gets) — YOU ALWAYS PICK THIS:
 - Educational: Viewer learns something
